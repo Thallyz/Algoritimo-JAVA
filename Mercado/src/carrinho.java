@@ -5,29 +5,21 @@ public class carrinho {
     private List<produto> produtos;
 
     public carrinho() {
-        this.produtos=new ArrayList<>();
-
-    }
+        this.produtos=new ArrayList<>();}
     public void adicionarProduto(produto produto){
-        produtos.add(produto);
-    }
+        produtos.add(produto);}
     public void removerProduto(produto produto){
-        produtos.remove(produto);
-    }
+        produtos.remove(produto);}
     public double calcularTotal(){
         double total=0;
         for(produto produto: produtos){
-            total += produto.getPreco();
-        }
-        return total;
-    }
+            total += produto.getPreco();}
+        return total;}
+
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder("Carrinho:\n");
         for(produto produto:produtos){
-            sb.append(produto).append("\n");
-        }
+            sb.append(produto).append("\n");}
         sb.append("Total: R$").append(calcularTotal());
-        return sb.toString();
-    }
-}
+        return sb.toString();}}
