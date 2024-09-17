@@ -23,8 +23,8 @@ public class Livro {
         return autor;
     }
 
-    public static Livro estaDisponivel() {
-        return estaDisponivel();
+    public boolean estaDisponivel() {
+        return disponivel;
     }
 
     public void setDisponivel(boolean disponivel) {

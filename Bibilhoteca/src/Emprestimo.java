@@ -6,12 +6,13 @@ public class Emprestimo {
     private LocalDate dateEmprestimo;
     private LocalDate dataDevolucao;
 
-    public Emprestimo(Livro livro, Usuario usuario, LocalDate dateEmprestimo, LocalDate dataDevolucao) {
+    public Emprestimo(Livro livro, Usuario usuario) {
         this.livro = livro;
         this.usuario = usuario;
         this.dateEmprestimo = dateEmprestimo.now();
         this.dataDevolucao = dataDevolucao.plusDays(7);
     }
+    
 
     public Livro getLivro() {
         return livro;
