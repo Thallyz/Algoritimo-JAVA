@@ -5,10 +5,10 @@ public class Usuario {
     private String nome;
     private ArrayList<Livro> livroAdiquirido;
 
-    public Usuario(int id, String nome, ArrayList<Livro> livroAdiquirido) {
+    public Usuario(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.livroAdiquirido = livroAdiquirido;
+        this.livroAdiquirido = new ArrayList<>();
     }
 
     public int getId() {

@@ -5,10 +5,10 @@ public class Biblioteca {
     private ArrayList<Usuario>usuarios;
     private ArrayList<Emprestimo>emprestimos;
 
-    public Biblioteca(ArrayList<Livro> livros, ArrayList<Usuario> usuarios, ArrayList<Emprestimo> emprestimos) {
-        this.livros = livros;
-        this.usuarios = usuarios;
-        this.emprestimos = emprestimos;
+    public Biblioteca() {
+        this.livros = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
+        this.emprestimos = new ArrayList<>();
     }
 
     public void cadastraLivro(Livro livros) {
@@ -62,4 +62,11 @@ public class Biblioteca {
 
     }
 
+    public ArrayList<Livro> getLivros() {
+        return livros;
+    }
+
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
 }
