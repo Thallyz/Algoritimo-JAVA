@@ -105,6 +105,7 @@ public class Main {
         System.out.println("Usuário cadastrado com sucesso!");
     }
 
+
     // Função para realizar empréstimo
     private static void realizarEmprestimo(Biblioteca biblioteca, Scanner scanner) {
         System.out.print("\nDigite o ID do livro para empréstimo: ");
