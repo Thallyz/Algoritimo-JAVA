@@ -4,25 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Instanciando a biblioteca
-        Biblioteca biblioteca = new Biblioteca();
-
-        // Criando alguns livros
-        Livro livro1 = new Livro(1, "O Senhor dos Anéis", "J.R.R. Tolkien");
-        Livro livro2 = new Livro(2, "1984", "George Orwell");
-        Livro livro3 = new Livro(3, "Dom Quixote", "Miguel de Cervantes");
-
-        // Adicionando os livros à biblioteca
-        biblioteca.cadastraLivro(livro1);
-        biblioteca.cadastraLivro(livro2);
-        biblioteca.cadastraLivro(livro3);
-
-        // Criando alguns usuários
-        Usuario usuario1 = new Usuario(1,"João");
-        Usuario usuario2 = new Usuario(2,"Maria");
-
-        // Adicionando os usuários à biblioteca
-        biblioteca.cadastraUsuario(usuario1);
-        biblioteca.cadastraUsuario(usuario2);
+        Biblioteca biblioteca = getBiblioteca();
 
         // Menu para o sistema da biblioteca
         Scanner scanner = new Scanner(System.in);
@@ -65,6 +47,29 @@ public class Main {
         } while (opcao != 0);
 
         scanner.close();
+    }
+
+    private static Biblioteca getBiblioteca() {
+        Biblioteca biblioteca = new Biblioteca();
+
+        // Criando alguns livros
+        Livro livro1 = new Livro(1, "O Senhor dos Anéis", "J.R.R. Tolkien");
+        Livro livro2 = new Livro(2, "1984", "George Orwell");
+        Livro livro3 = new Livro(3, "Dom Quixote", "Miguel de Cervantes");
+
+        // Adicionando os livros à biblioteca
+        biblioteca.cadastraLivro(livro1);
+        biblioteca.cadastraLivro(livro2);
+        biblioteca.cadastraLivro(livro3);
+
+        // Criando alguns usuários
+        Usuario usuario1 = new Usuario(1,"João");
+        Usuario usuario2 = new Usuario(2,"Maria");
+
+        // Adicionando os usuários à biblioteca
+        biblioteca.cadastraUsuario(usuario1);
+        biblioteca.cadastraUsuario(usuario2);
+        return biblioteca;
     }
 
     // Função para listar os livros cadastrados

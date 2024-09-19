@@ -6,7 +6,7 @@ public class Biblioteca {
     private ArrayList<Emprestimo>emprestimos;
 
     public Biblioteca() {
-        this.livros = new ArrayList<>();
+        this.livros=new ArrayList<>();
         this.usuarios = new ArrayList<>();
         this.emprestimos = new ArrayList<>();
     }
@@ -18,20 +18,21 @@ public class Biblioteca {
     public void cadastraUsuario(Usuario usuario) {
         this.usuarios.add(usuario);
     }
-    public void emprestarLivro(int id_livro, int id_usuario) {
-        Livro livro = buscarIdLivro(id_livro);
-        Usuario usuario = buscarIdUsuario(id_usuario);
+    public void emprestarLivro(int livroId, int usuarioId) {
+        Livro livro = buscarIdLivro(livroId);
+        Usuario usuario = buscarIdUsuario(usuarioId);
 
-        if(livro !=null && usuario != null && livro.estaDisponivel()){
+        if (livro != null && usuario != null && livro.estaDisponivel()) {
+            Emprestimo emprestimo = new Emprestimo(livro, usuario); // 7 dias fixos
             livro.setDisponivel(false);
-            Emprestimo emprestimo = new Emprestimo(livro, usuario);
-            emprestimos.add(emprestimo);
-            usuario.addLivro(livro);
-            System.out.println("Emprestimo Realizado");
-        }else{
-            System.out.println("Emprestimo não Realizado");
+            usuario.getLivroAdiquirido().add(livro);
+            System.out.println("Livro emprestado: " + livro.getTitulo() + " para " + usuario.getNome() +
+                    ". Devolução em: " + emprestimo.getDataDevolucao());
+        } else {
+            System.out.println("Empréstimo não pode ser realizado.");
         }
     }
+
     public Livro buscarIdLivro(int id){
         for (Livro livro: livros){
             if(livro.getId()==id){

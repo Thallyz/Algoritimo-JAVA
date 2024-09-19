@@ -1,18 +1,20 @@
+
 import java.time.LocalDate;
 
 public class Emprestimo {
-    private Livro livro;
-    private Usuario usuario;
+    private final Livro livro;
+    private final Usuario usuario;
     private LocalDate dateEmprestimo;
     private LocalDate dataDevolucao;
+    private static final int devolucao=7;
 
     public Emprestimo(Livro livro, Usuario usuario) {
         this.livro = livro;
         this.usuario = usuario;
-        this.dateEmprestimo = dateEmprestimo.now();
-        this.dataDevolucao = dataDevolucao.plusDays(7);
+        this.dateEmprestimo =LocalDate.now();
+        this.dataDevolucao = this.dateEmprestimo.plusDays(devolucao);
     }
-    
+
 
     public Livro getLivro() {
         return livro;
