@@ -70,4 +70,8 @@ public class Biblioteca {
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
+
+    public ArrayList<Emprestimo> getEmprestimos() {
+        return emprestimos;
+    }
 }
